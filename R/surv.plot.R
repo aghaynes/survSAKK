@@ -1590,13 +1590,11 @@ if(is.logical(risktable.censoring)){
 # 5.3 Add legend text to the outer margin for each arm ####
 #----------------------------------------------------------------------------#
       if (missing(risktable.name)) {
-        ristkable.name <- legend.name
-      } else {
-        ristkable.name <- risktable.name
+        risktable.name <- legend.name
       }
       if(arm_no > 1){
         for (i in 1:arm_no){
-          mtext(text = ristkable.name[i], side = 1, outer = FALSE,
+          mtext(text = risktable.name[i], side = 1, outer = FALSE,
                 line = i+risktable.pos, adj = 0, at = risktable.name.position,
                 font = risktable.name.font,
                 cex = risktable.name.cex,
