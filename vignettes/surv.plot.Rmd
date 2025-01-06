@@ -562,18 +562,30 @@ par(users_default_setting)
 
 ## Multiple plots using `split.screen()` 
 
-```{r plots3, fig.height = 10, fig.width = 8}
-split.screen(c(2,1))
+We use the parameter `letter` to add a letter for every plot on the top to the right. 
+
+```{r plots3, fig.height = 10, fig.width = 10}
+split.screen(c(2,2))
 screen(1)
 surv.plot(fit.lung.arm.m, 
           time.unit = "month", 
           segment.quantile = 0.5, 
-          segment.confint = FALSE)
+          segment.confint = FALSE, 
+          letter = "A")
 screen(2)
 surv.plot(fit.lung.arm.m, 
           time.unit = "month", 
-          segment.quantile = 0.75, 
-          segment.confint = FALSE)
+          segment.confint = FALSE, 
+          stat = "logrank",
+          letter = "B")
+screen(3)
+surv.plot(fit.lung.d, 
+          letter = "C")
+screen(4)
+surv.plot(fit.lung.m, 
+          time.unit = "month", 
+          col = "darkcyan",
+          letter = "D")
 close.screen(all = TRUE)
 ```
 

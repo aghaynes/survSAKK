@@ -61,6 +61,15 @@ Can accept a single colour value  or a vector of colours.}
 \item{sub}{Subtitle of the plot.
 Note: A subtitle is only displayed if no risk table is shown.}
 
+\item{letter}{A letter to be displayed on the top to the left of the figure (for example
+if several plots are displayed in one figure).}
+
+\item{letter.cex}{The size of \code{letter} which is displayed on the top to the left.}
+
+\item{letter.pos.x}{The X-axis position of \code{letter} (corresponds to \code{adj} in \code{mtext}). Default is -0.35}
+
+\item{letter.pos.y}{The Y-axis position of \code{letter} (corresponds to \code{line} in \code{mtext}). Default is 1.}
+
 \item{xlab}{X-axis label.}
 
 \item{ylab}{Y-axis label.}
