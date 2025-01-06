@@ -77,6 +77,15 @@
 #'
 #' @param ylab Y-axis label.
 #'
+#' @param letter A letter to be displayed on the top to the left of the figure (for example
+#' if several plots are displayed in one figure).
+#'
+#' @param letter.cex The size of `letter` which is displayed on the top to the left.
+#'
+#' @param letter.pos.x The X-axis position of `letter` (corresponds to `adj` in `mtext`). Default is -0.35
+#'
+#' @param letter.pos.y The Y-axis position of `letter` (corresponds to `line` in `mtext`). Default is 1.
+#'
 #' @param xticks A numeric vector specifying the ticks of the x-axis.
 #'
 #' Can be specified as `seq(from = , to = , by = )`.
@@ -367,6 +376,10 @@ surv.plot <- function(
     col = NULL,
     main = NULL,
     sub = NULL,
+    letter = NULL,
+    letter.cex = 1.5,
+    letter.pos.x = -0.35,
+    letter.pos.y = 1,
     xlab = NULL,
     ylab = NULL,
     xticks,
@@ -680,7 +693,7 @@ surv.plot <- function(
     stop("Provided theme argument does not exist!")
   }
 
-    #----------------------------------------------------------------------------#
+  #----------------------------------------------------------------------------#
   # 2. survPlot ####
   #----------------------------------------------------------------------------#
 
@@ -885,6 +898,15 @@ surv.plot <- function(
     }
   } else {
     stop("`legend` expecting TRUE or FAlSE as an argument!")
+  }
+
+
+  #----------------------------------------------------------------------------#
+  ## 2.7 Add letter to plot  ####
+  #----------------------------------------------------------------------------#
+
+  if (!is.null(letter)){
+    mtext(text=bquote(bold(.(letter))), side=3,line=letter.pos.y, adj=letter.pos.x, cex=letter.cex)
   }
 
   #----------------------------------------------------------------------------#
