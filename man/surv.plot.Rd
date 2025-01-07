@@ -6,6 +6,8 @@
 \arguments{
 \item{fit}{An object of class \link[survival:survfit]{survival::survfit} containing survival data.}
 
+\item{ties}{String specifying the method for tie handling. If there are no tied death times all the methods are equivalent. Options: "efron", "breslow", "exact". Default: "efron"}
+
 \item{reference.arm}{A character string specifying the reference arm for comparison.}
 
 \item{time.unit}{A character string specifying the time unit which was used to create the \code{fit} object.
@@ -161,23 +163,23 @@ drawn as segment(s). Example: 0.5 corresponds to median.}
 \item{segment.main}{Title of the segment text.}
 
 \item{segment.confint}{A logical parameter specifying whether to display
-the confidence interval for the segment.
+the confidence interval for the segment. Default: TRUE}
 
-\emph{NOTE:} Only possible to set \code{segment.confint = FALSE} if there are two arms.
-Default is \code{TRUE}.}
+\item{segment.annotation}{Position of the segment annotation. If several quantiles or time points are chosen then
+the position can only be set to \code{"left"} or \code{"right"}.
 
-\item{segment.annotation}{Position of the segment annotation.
+Options include: \code{c(x,y)}, \code{"bottom"}, \code{"bottomleft"}, \code{"left"}, \code{"right"}, \code{"top"}, \code{"none"}.}
 
-Options include: \code{c(x,y)},\code{"bottomleft"}, \code{"left"}, \code{"right"}, \code{"top"}, \code{"none"}.}
+\item{segment.annotation.offset}{The offset used in function \code{text()} for adding the annotation if several time points or quantiles should be added.}
 
 \item{segment.annotation.two.lines}{A logical parameter to force that the
-annotation is displayed on two lines even if there is only one arm. This
+annotation is displayed on two lines. This
 parameter only has an effect if there is only one arm. Default: FALSE}
 
 \item{segment.annotation.col}{A colour which is used for the segment annotation.
 Can accept a single colour value or a vector of colours.}
 
-\item{segment.annotation.space}{Spacing between the text in units of x-coordinates.}
+\item{segment.annotation.space}{Spacing between the text in units of y-coordinates.}
 
 \item{segment.col}{A colour which is used for the segment.
 Can accept a single colour value.}
