@@ -295,8 +295,8 @@ test_that("Check if short annotation works without an error.", {
                           segment.confint = FALSE))
 })
 
-test_that("Check if short annotation can handle error.", {
-  expect_error(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
+test_that("Check if CI for segment can be omitted for one arm", {
+  expect_silent(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
                           segment.quantile = 0.25,
                           segment.confint = FALSE))
 })
@@ -362,15 +362,15 @@ test_that("Check if segment can handle error.", {
 })
 
 
-# Test 21: Check Error message if no confidence interval should be displayed but number of arms is not equal to 2
+# Test 21: Check if CI can be omitted if there is only one arm
 test_that("Check if CI with one arm can handle error.", {
-  expect_error(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
+  expect_silent(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
                          segment.quantile = 0.50,
                          segment.confint = FALSE))
 })
 
 # Test 22:
-test_that("Check if error with different segment type can handle error.", {
+test_that("Check error if segment quantile AND time point should be added.", {
   expect_error(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
                          segment.quantile = 0.50,
                          segment.timepoint = 360,
@@ -416,8 +416,8 @@ test_that("Check segment time point with short annotation with number of arms = 
                           segment.confint = F))
 })
 
-test_that("Check if error when time point with short annotation should be added but arms != 2.", {
-  expect_error(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
+test_that("Check that time point with short annotation works if arms != 2.", {
+  expect_silent(surv.plot(fit = survfit(Surv(time, status) ~ 1, data = lung),
                           time.unit = "year",
                           segment.timepoint = 300,
                           segment.confint = F))
