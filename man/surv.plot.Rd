@@ -166,11 +166,11 @@ drawn as segment(s). Example: 0.5 corresponds to median.}
 the confidence interval for the segment. Default: TRUE}
 
 \item{segment.annotation}{Position of the segment annotation. If several quantiles or time points are chosen then
-the position can only be set to \code{"left"} or \code{"right"}.
+the position can only be set to \code{"left"}, \code{"right"}, \code{"top"} or \code{"bottom"}.
 
 Options include: \code{c(x,y)}, \code{"bottom"}, \code{"bottomleft"}, \code{"left"}, \code{"right"}, \code{"top"}, \code{"none"}.}
 
-\item{segment.annotation.offset}{The offset used in function \code{text()} for adding the annotation if several time points or quantiles should be added.}
+\item{segment.annotation.offset}{The offset used in function \code{text()} for adding the annotation if several time points or quantiles are added.}
 
 \item{segment.annotation.two.lines}{A logical parameter to force that the
 annotation is displayed on two lines. This

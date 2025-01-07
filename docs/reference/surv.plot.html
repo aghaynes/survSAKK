@@ -55,6 +55,10 @@ and layout customization options using <code>surv.plot(fit, ...)</code>.</p>
 <dd><p>An object of class <a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survival::survfit</a> containing survival data.</p></dd>
 
 
+<dt id="arg-ties">ties<a class="anchor" aria-label="anchor" href="#arg-ties"></a></dt>
+<dd><p>String specifying the method for tie handling. If there are no tied death times all the methods are equivalent. Options: "efron", "breslow", "exact". Default: "efron"</p></dd>
+
+
 <dt id="arg-reference-arm">reference.arm<a class="anchor" aria-label="anchor" href="#arg-reference-arm"></a></dt>
 <dd><p>A character string specifying the reference arm for comparison.</p></dd>
 
@@ -280,19 +284,22 @@ drawn as segment(s). Example: 0.5 corresponds to median.</p></dd>
 
 <dt id="arg-segment-confint">segment.confint<a class="anchor" aria-label="anchor" href="#arg-segment-confint"></a></dt>
 <dd><p>A logical parameter specifying whether to display
-the confidence interval for the segment.</p>
-<p><em>NOTE:</em> Only possible to set <code>segment.confint = FALSE</code> if there are two arms.
-Default is <code>TRUE</code>.</p></dd>
+the confidence interval for the segment. Default: TRUE</p></dd>
 
 
 <dt id="arg-segment-annotation">segment.annotation<a class="anchor" aria-label="anchor" href="#arg-segment-annotation"></a></dt>
-<dd><p>Position of the segment annotation.</p>
-<p>Options include: <code>c(x,y)</code>,<code>"bottomleft"</code>, <code>"left"</code>, <code>"right"</code>, <code>"top"</code>, <code>"none"</code>.</p></dd>
+<dd><p>Position of the segment annotation. If several quantiles or time points are chosen then
+the position can only be set to <code>"left"</code> or <code>"right"</code>.</p>
+<p>Options include: <code>c(x,y)</code>, <code>"bottom"</code>, <code>"bottomleft"</code>, <code>"left"</code>, <code>"right"</code>, <code>"top"</code>, <code>"none"</code>.</p></dd>
+
+
+<dt id="arg-segment-annotation-offset">segment.annotation.offset<a class="anchor" aria-label="anchor" href="#arg-segment-annotation-offset"></a></dt>
+<dd><p>The offset used in function <code><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text()</a></code> for adding the annotation if several time points or quantiles should be added.</p></dd>
 
 
 <dt id="arg-segment-annotation-two-lines">segment.annotation.two.lines<a class="anchor" aria-label="anchor" href="#arg-segment-annotation-two-lines"></a></dt>
 <dd><p>A logical parameter to force that the
-annotation is displayed on two lines even if there is only one arm. This
+annotation is displayed on two lines. This
 parameter only has an effect if there is only one arm. Default: FALSE</p></dd>
 
 
@@ -302,7 +309,7 @@ Can accept a single colour value or a vector of colours.</p></dd>
 
 
 <dt id="arg-segment-annotation-space">segment.annotation.space<a class="anchor" aria-label="anchor" href="#arg-segment-annotation-space"></a></dt>
-<dd><p>Spacing between the text in units of x-coordinates.</p></dd>
+<dd><p>Spacing between the text in units of y-coordinates.</p></dd>
 
 
 <dt id="arg-segment-col">segment.col<a class="anchor" aria-label="anchor" href="#arg-segment-col"></a></dt>
