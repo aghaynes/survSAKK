@@ -24,6 +24,12 @@ The `survSAKK` R package provides the `surv.plot()` function, facilitating Kapla
 
 Install the current version of `survSAKK` with:
 
+```{r cran}
+install.packages("survSAKK")
+```
+
+The development version can be installed via:
+
 ```{r installation}
 # install.packages("devtools")
 devtools::install_github("SAKK-Statistics/survSAKK",
