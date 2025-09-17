@@ -1,8 +1,8 @@
 ---
-title: "Creating survival plot"
+title: "Creating survival plots"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating survival plot}
+  %\VignetteIndexEntry{Creating survival plots}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
